@@ -1,7 +1,7 @@
 const express = require('express')
 const pool = require('./db')
 const server = http.Server(app);
-const port = process.env.PORT || 3005
+const port = process.env.PORT || 3306
 const fs = require('fs');
 const app = express()
 const cors = require('cors');
@@ -124,7 +124,7 @@ app.get('/product', async (req, res) => {
         res.sendStatus(500);
     }
 });
-
+app.use(express.static('public'));
 // API để tải ảnh lên
 // app.post('/upload', upload.single('image'), (req, res) => {
 //     if (!req.file) {
