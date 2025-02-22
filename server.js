@@ -1,6 +1,6 @@
 const express = require('express')
 const pool = require('./db')
-
+const server = http.Server(app);
 const port = process.env.PORT || 3005
 const fs = require('fs');
 const app = express()
@@ -160,4 +160,4 @@ app.get('/product', async (req, res) => {
 //     });
 // });
 
-app.listen(port, () => console.log(`Server has started on port: ${port}`))
+server.listen(port, () => console.log(`Server has started on port: ${port}`))
